@@ -1,0 +1,6 @@
+%p
+  = render @places
+
+- if can? :write, Place
+  %p
+    = link_to 'Create Place', [:new, :place]

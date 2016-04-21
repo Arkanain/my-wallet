@@ -1,0 +1,14 @@
+%h1
+  = @place.name
+
+%ul
+  - @place.wallets.each do |wallet|
+    %li
+      = wallet.title
+      = link_to 'Download', place_wallet_send_pass_path(@place, wallet), remote: true
+
+%p
+  = link_to 'Add wallet', new_place_wallet_path(@place)
+
+%p
+  = link_to 'Back', places_path
